@@ -1,0 +1,9 @@
+---
+- hosts: all
+  tasks:
+    - name: install dependecies
+      apt: name=lib32gcc1 state=present
+  
+    - name: create steamcmd user
+      user: name=steam
+
