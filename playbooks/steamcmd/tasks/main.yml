@@ -5,5 +5,7 @@
       apt: name=lib32gcc1 state=present
   
     - name: create steamcmd user
-      user: name=steam
-
+      user: name=steam group=steam
+    
+    - name: download steamcmd
+      get_url: url=https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz dest=/home/steam/ mode=440 #headers='key:value,key:value'
